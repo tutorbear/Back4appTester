@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         ParseLiveQueryClient parseLiveQueryClient = null;
 
         try {
-            parseLiveQueryClient = ParseLiveQueryClient.Factory.getClient(new URI("wss://livequery.b4a.io/"));
+            // newapptest.back4app.io / newapptest.b4a.io
+            parseLiveQueryClient = ParseLiveQueryClient.Factory.getClient(new URI("wss://newapptest.back4app.io/"));
         } catch (URISyntaxException e) {
             Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (parseLiveQueryClient != null) {
             Toast.makeText(this, "Client established", Toast.LENGTH_SHORT).show();
             //Subscribe
-            ParseQuery<ParseObject> parseQuery = new ParseQuery("Dogs");
+            ParseQuery<ParseObject> parseQuery = new ParseQuery("Category");
             SubscriptionHandling<ParseObject> subscriptionHandling =
                     parseLiveQueryClient.subscribe(parseQuery);
 
